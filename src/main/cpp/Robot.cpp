@@ -57,7 +57,15 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {}
 
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() {
+
+  mL.Set(pilot.GetLeftY());
+
+  mR.Set(pilot.GetRightY());
+
+
+
+}
 
 void Robot::DisabledInit() {}
 
