@@ -17,6 +17,7 @@ void Robot::RobotInit() {
  * This function is called every 20 ms, no matter the mode. Use
  * this for items like diagnostics that you want ran during disabled,
  * autonomous, teleoperated and test.
+ hi jack and luka :)
  *
  * <p> This runs after the mode specific periodic functions, but before
  * LiveWindow and SmartDashboard integrated updating.
@@ -55,15 +56,23 @@ void Robot::AutonomousPeriodic() {
   }
 }
 
-void Robot::TeleopInit() {}
-
+void Robot::TeleopInit() {
+  comp.EnableDigital();
+}
 void Robot::TeleopPeriodic() {
-
   mL.Set(pilot.GetLeftY());
-
   mR.Set(pilot.GetRightY());
+  int deadzone = 0.3;
+  if (pilot.GetLeftTriggerAxis() > deadzone)
+  {
+    jerry.Set((-(pilot.GetLeftTriggerAxis()) + deadzone) / (1 - deadzone));
+  }
+  else if(pilot.GetRightTriggerAxis() > deadzone) {
+    jerry.Set((pilot.GetRightTriggerAxis() - deadzone)/(1 - deadzone));
+  }
 
 
+  bob.Set((pilot.GetAButtonPressed()));
 
 }
 
