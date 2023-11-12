@@ -6,7 +6,7 @@
 
 #include <fmt/core.h>
 #include <frc/smartdashboard/SmartDashboard.h>
-
+#include <rev/CANSparkMax.h>
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);

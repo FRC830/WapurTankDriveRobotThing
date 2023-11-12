@@ -5,7 +5,7 @@
 #pragma once
 
 #include <string>
-
+#include <rev/CANSparkMax.h>
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 #include <rev/CANSparkMax.h>
