@@ -34,10 +34,12 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
-  frc::Solenoid bob = frc::Solenoid(69, frc::PneumaticsModuleType::CTREPCM, 69);
-  frc::Compressor comp = frc::Compressor(100, frc::PneumaticsModuleType::CTREPCM);
-  rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless);
-  rev::CANSparkMax mR = rev::CANSparkMax(1, rev::CANSparkMaxLowLevel::MotorType::kBrushless);
-  rev::CANSparkMax jerry = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless);
-  frc::XboxController pilot{0};
+  
+  //frc::Solenoid bob = frc::Solenoid(5, frc::PneumaticsModuleType::CTREPCM, 7);
+  //frc::Compressor comp = frc::Compressor(6, frc::PneumaticsModuleType::CTREPCM);
+  rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty
+  rev::CANSparkMax mR = rev::CANSparkMax(1, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor righty
+  rev::CANSparkMax elmo = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
+  frc::XboxController pilot{0}; //Driver Controller
+  frc::XboxController pilot2{1}; // Extra Feature Controller
 };

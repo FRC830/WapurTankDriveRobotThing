@@ -57,22 +57,37 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-  comp.EnableDigital();
+  //comp.EnableDigital();
 }
 void Robot::TeleopPeriodic() {
   mL.Set(pilot.GetLeftY());
   mR.Set(pilot.GetRightY());
+  
   int deadzone = 0.3;
-  if (pilot.GetLeftTriggerAxis() > deadzone)
+  if (pilot2.GetLeftBumper())
   {
-    jerry.Set((-(pilot.GetLeftTriggerAxis()) + deadzone) / (1 - deadzone));
+      if (pilot2.GetLeftY() > deadzone)
+    {
+      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone) * 0.2);
+
+    }
+    else if(pilot2.GetLeftY() < deadzone) {
+      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone) * 0.2);
+    }
   }
-  else if(pilot.GetRightTriggerAxis() > deadzone) {
-    jerry.Set((pilot.GetRightTriggerAxis() - deadzone)/(1 - deadzone));
+  else
+  {
+    if (pilot2.GetLeftY() > deadzone)
+    {
+      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone));
+    }
+    else if(pilot2.GetLeftY() < deadzone) 
+    {
+      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone));
+    }
   }
 
-
-  bob.Set((pilot.GetAButtonPressed()));
+//  bob.Set((pilot2.GetAButtonPressed()));
 
 }
 
