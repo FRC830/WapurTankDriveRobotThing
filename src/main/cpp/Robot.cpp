@@ -14,7 +14,7 @@ void Robot::RobotInit() {
 }
 
 
-void Robot::ElevatorOperation(int deadzone)
+void Whopper::ElevatorOperation(int deadzone)
 {
   if (pilot2.GetLeftBumper())
   {

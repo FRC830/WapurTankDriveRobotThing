@@ -5,13 +5,14 @@
 #pragma once
 
 #include <string>
-#include <rev/CANSparkMax.h>
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 #include <rev/CANSparkMax.h>
 #include <frc/XboxController.h>
+/*
 #include <frc/Compressor.h>
 #include <frc/Solenoid.h>
+*/
 
 
 class Robot : public frc::TimedRobot {
@@ -39,9 +40,8 @@ class Robot : public frc::TimedRobot {
   
   //frc::Solenoid bob = frc::Solenoid(5, frc::PneumaticsModuleType::CTREPCM, 7);
   //frc::Compressor comp = frc::Compressor(6, frc::PneumaticsModuleType::CTREPCM);
-  rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty
-  rev::CANSparkMax mR = rev::CANSparkMax(1, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor righty
+  // rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty
+  // rev::CANSparkMax mR = rev::CANSparkMax(1, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor righty
   rev::CANSparkMax elmo = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
   frc::XboxController pilot{0}; //Driver Controller
-  frc::XboxController pilot2{1}; // Extra Feature Controller
 };
