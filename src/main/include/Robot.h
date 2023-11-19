@@ -28,6 +28,8 @@ class Robot : public frc::TimedRobot {
   void TestPeriodic() override;
   void SimulationInit() override;
   void SimulationPeriodic() override;
+  void ElevatorOperation(int deadzone);
+
 
  private:
   frc::SendableChooser<std::string> m_chooser;

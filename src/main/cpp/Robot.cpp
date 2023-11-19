@@ -13,6 +13,32 @@ void Robot::RobotInit() {
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 }
 
+
+void Robot::ElevatorOperation(int deadzone)
+{
+  if (pilot2.GetLeftBumper())
+  {
+      if (pilot2.GetLeftY() > deadzone)
+    {
+      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone) * 0.2);
+    }
+    else if(pilot2.GetLeftY() < deadzone) {
+      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone) * 0.2);
+    }
+  }
+  else
+  {
+    if (pilot2.GetLeftY() > deadzone)
+    {
+      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone));
+    }
+    else if(pilot2.GetLeftY() < deadzone) 
+    {
+      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone));
+    }
+  }
+}
+
 /**
  * This function is called every 20 ms, no matter the mode. Use
  * this for items like diagnostics that you want ran during disabled,
@@ -62,30 +88,9 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
   mL.Set(pilot.GetLeftY());
   mR.Set(pilot.GetRightY());
-  
-  int deadzone = 0.3;
-  if (pilot2.GetLeftBumper())
-  {
-      if (pilot2.GetLeftY() > deadzone)
-    {
-      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone) * 0.2);
 
-    }
-    else if(pilot2.GetLeftY() < deadzone) {
-      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone) * 0.2);
-    }
-  }
-  else
-  {
-    if (pilot2.GetLeftY() > deadzone)
-    {
-      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone));
-    }
-    else if(pilot2.GetLeftY() < deadzone) 
-    {
-      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone));
-    }
-  }
+  int deadzone = 0.3;
+  ElevatorOperation(deadzone);
 
 //  bob.Set((pilot2.GetAButtonPressed()));
 
