@@ -29,6 +29,7 @@ class Robot : public frc::TimedRobot {
   void TestPeriodic() override;
   void SimulationInit() override;
   void SimulationPeriodic() override;
+  void Drive();
   void ElevatorOperation(int deadzone);
 
 

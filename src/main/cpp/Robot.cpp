@@ -13,6 +13,14 @@ void Robot::RobotInit() {
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 }
 
+/**
+ * This is the drive function
+*/
+void Robot::Drive(){
+  mL.Set(pilot.GetLeftY());
+  mR.Set(pilot.GetRightY());
+}
+
 
 void Whopper::ElevatorOperation(int deadzone)
 {
@@ -86,8 +94,7 @@ void Robot::TeleopInit() {
   //comp.EnableDigital();
 }
 void Robot::TeleopPeriodic() {
-  mL.Set(pilot.GetLeftY());
-  mR.Set(pilot.GetRightY());
+  Robot::Drive();
 
   int deadzone = 0.3;
   ElevatorOperation(deadzone);
