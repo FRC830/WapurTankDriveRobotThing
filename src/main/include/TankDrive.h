@@ -3,7 +3,7 @@
 
 class TankDrive{
     public: 
-        void Drive(double leftY, double rightY);
+        void Drive();
 
     private:     
         rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty

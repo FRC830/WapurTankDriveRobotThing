@@ -44,5 +44,5 @@ class Robot : public frc::TimedRobot {
   // rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty
   // rev::CANSparkMax mR = rev::CANSparkMax(1, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor righty
   //rev::CANSparkMax elmo = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
-  frc::XboxController pilot{0}; //Driver Controller
+  // frc::XboxController pilot{0}; //Driver Controller
 };

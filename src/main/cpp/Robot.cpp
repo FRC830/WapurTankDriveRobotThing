@@ -12,6 +12,7 @@ void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+
 }
 
 /**
@@ -19,7 +20,8 @@ void Robot::RobotInit() {
 */
 
 
-
+  Elevator elevator;
+  int deadzone = 0.3;
 
 
 /**
@@ -67,11 +69,12 @@ void Robot::AutonomousPeriodic() {
 
 void Robot::TeleopInit() {
   //comp.EnableDigital();
+
 }
 void Robot::TeleopPeriodic() {
 
-  int deadzone = 0.3;
-  Elevator elevator;
+  
+  
   elevator.ElevatorOperation(deadzone);
 
 

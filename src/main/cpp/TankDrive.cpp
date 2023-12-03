@@ -1,6 +1,6 @@
 #include "TankDrive.h"
 
-void TankDrive::Drive(double leftY, double rightY){
-  mL.Set(leftY);
-  mR.Set(rightY);
+void TankDrive::Drive(){
+  mL.Set(0 );
+  mR.Set(0 );
 }

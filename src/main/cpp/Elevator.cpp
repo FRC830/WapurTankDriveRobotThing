@@ -1,8 +1,7 @@
 #include "Elevator.h"
 
 
-void Elevator::ElevatorOperation(int deadzone)
-{
+void Elevator::ElevatorOperation(int deadzone) {
   if (pilot2.GetLeftBumper())
   {
       if (pilot2.GetLeftY() > deadzone)
