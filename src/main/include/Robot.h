@@ -9,10 +9,6 @@
 #include <frc/smartdashboard/SendableChooser.h>
 #include <rev/CANSparkMax.h>
 #include <frc/XboxController.h>
-/*
-#include <frc/Compressor.h>
-#include <frc/Solenoid.h>
-*/
 
 
 class Robot : public frc::TimedRobot {
@@ -38,11 +34,4 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
-  
-  //frc::Solenoid bob = frc::Solenoid(5, frc::PneumaticsModuleType::CTREPCM, 7);
-  //frc::Compressor comp = frc::Compressor(6, frc::PneumaticsModuleType::CTREPCM);
-  // rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty
-  // rev::CANSparkMax mR = rev::CANSparkMax(1, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor righty
-  //rev::CANSparkMax elmo = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
-  // frc::XboxController pilot{0}; //Driver Controller
 };

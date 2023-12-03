@@ -1,7 +1,6 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
-//This is all common sense! No need for comments!
 
 #include "Robot.h"
 #include "Elevator.h"
@@ -15,8 +14,6 @@ void Robot::RobotInit() {
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
 }
-
-
 // Elevator object initialization and deadzone variable initialization
   Elevator elevator;
   int deadzone = 0.3;
@@ -26,8 +23,7 @@ void Robot::RobotInit() {
  * This function is called every 20 ms, no matter the mode. Use
  * this for items like diagnostics that you want ran during disabled,
  * autonomous, teleoperated and test.
- hi jack and luka :)
- *
+ * 
  * <p> This runs after the mode specific periodic functions, but before
  * LiveWindow and SmartDashboard integrated updating.
  */
@@ -46,8 +42,6 @@ void Robot::RobotPeriodic() {}
  */
 void Robot::AutonomousInit() {
   m_autoSelected = m_chooser.GetSelected();
-  // m_autoSelected = SmartDashboard::GetString("Auto Selector",
-  //     kAutoNameDefault);
   fmt::print("Auto selected: {}\n", m_autoSelected);
 
   if (m_autoSelected == kAutoNameCustom) {
@@ -66,7 +60,6 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-  //comp.EnableDigital();
 
 }
 void Robot::TeleopPeriodic() {
@@ -76,7 +69,6 @@ void Robot::TeleopPeriodic() {
   elevator.ElevatorOperation(deadzone);
 
 
-//  bob.Set((pilot2.GetAButtonPressed()));
 
 }
 
