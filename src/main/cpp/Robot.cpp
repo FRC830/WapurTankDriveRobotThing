@@ -3,7 +3,8 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "Robot.h"
-
+#include "Elevator.h"
+#include "TankDrive.h"
 #include <fmt/core.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <rev/CANSparkMax.h>
@@ -16,36 +17,10 @@ void Robot::RobotInit() {
 /**
  * This is the drive function
 */
-void Robot::Drive(){
-  mL.Set(pilot.GetLeftY());
-  mR.Set(pilot.GetRightY());
-}
 
 
-void Whopper::ElevatorOperation(int deadzone)
-{
-  if (pilot2.GetLeftBumper())
-  {
-      if (pilot2.GetLeftY() > deadzone)
-    {
-      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone) * 0.2);
-    }
-    else if(pilot2.GetLeftY() < deadzone) {
-      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone) * 0.2);
-    }
-  }
-  else
-  {
-    if (pilot2.GetLeftY() > deadzone)
-    {
-      elmo.Set((-(pilot2.GetLeftY()) + deadzone) / (1 - deadzone));
-    }
-    else if(pilot2.GetLeftY() < deadzone) 
-    {
-      elmo.Set((pilot2.GetLeftY() - deadzone)/(1 - deadzone));
-    }
-  }
-}
+
+
 
 /**
  * This function is called every 20 ms, no matter the mode. Use
@@ -94,10 +69,9 @@ void Robot::TeleopInit() {
   //comp.EnableDigital();
 }
 void Robot::TeleopPeriodic() {
-  Robot::Drive();
 
   int deadzone = 0.3;
-  ElevatorOperation(deadzone);
+  //Elevator::ElevatorOperation(deadzone);
 
 //  bob.Set((pilot2.GetAButtonPressed()));
 

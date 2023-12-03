@@ -7,6 +7,7 @@ class Elevator{
     
     private:
         frc::XboxController pilot2{1};
+        rev::CANSparkMax elmo = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
         
 
 };

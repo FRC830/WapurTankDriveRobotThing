@@ -1,9 +1,5 @@
 #include "Elevator.h"
-#include "Robot.h"
 
-#include <fmt/core.h>
-#include <frc/smartdashboard/SmartDashboard.h>
-#include <rev/CANSparkMax.h>
 
 void Elevator::ElevatorOperation(int deadzone)
 {
