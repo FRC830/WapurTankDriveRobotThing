@@ -5,9 +5,10 @@
 
 class Elevator{
     public:
-        void ElevatorOperation(int deadzone);
-    
+        Elevator(frc::XboxController elpilot2);
+        void ElevatorOperation();
     private:
-        frc::XboxController pilot2{1};
         rev::CANSparkMax ElevatorMotor = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
+        int deadzone = 0.3;
+        frc::XboxController elpilot;
 };

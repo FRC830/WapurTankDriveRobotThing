@@ -25,13 +25,13 @@ class Robot : public frc::TimedRobot {
   void TestPeriodic() override;
   void SimulationInit() override;
   void SimulationPeriodic() override;
-  void Drive();
-  void ElevatorOperation(int deadzone);
-
-
+  
  private:
   frc::SendableChooser<std::string> m_chooser;
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
+
+  
+
 };
