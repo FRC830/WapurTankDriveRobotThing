@@ -71,7 +71,9 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
 
   int deadzone = 0.3;
-  //Elevator::ElevatorOperation(deadzone);
+  Elevator elevator;
+  elevator.ElevatorOperation(deadzone);
+
 
 //  bob.Set((pilot2.GetAButtonPressed()));
 
