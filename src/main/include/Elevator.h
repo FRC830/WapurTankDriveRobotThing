@@ -5,7 +5,7 @@
 
 class Elevator{
     public:
-        Elevator(frc::XboxController elpilot2);
+        Elevator(frc::XboxController& elpilot2);
         void ElevatorOperation();
     private:
         rev::CANSparkMax ElevatorMotor = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // elevator motor
