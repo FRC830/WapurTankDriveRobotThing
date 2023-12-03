@@ -1,6 +1,7 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
+//This is all common sense! No need for comments!
 
 #include "Robot.h"
 #include "Elevator.h"
@@ -15,11 +16,8 @@ void Robot::RobotInit() {
 
 }
 
-/**
- * This is the drive function
-*/
 
-
+// Elevator object initialization and deadzone variable initialization
   Elevator elevator;
   int deadzone = 0.3;
 
