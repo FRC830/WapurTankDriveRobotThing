@@ -18,7 +18,7 @@ void Robot::RobotInit() {
 
 
 // Elevator object initialization and deadzone variable initialization
-  Elevator elevator;
+  // Elevator elevator;
   int deadzone = 0.3;
 
 
@@ -70,10 +70,10 @@ void Robot::TeleopInit() {
 
 }
 void Robot::TeleopPeriodic() {
-
+  drive.Drive();
   
   
-  elevator.ElevatorOperation(deadzone);
+  // elevator.ElevatorOperation(deadzone);
 
 
 //  bob.Set((pilot2.GetAButtonPressed()));

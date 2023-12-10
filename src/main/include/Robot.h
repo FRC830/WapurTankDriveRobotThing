@@ -9,6 +9,8 @@
 #include <frc/smartdashboard/SendableChooser.h>
 #include <rev/CANSparkMax.h>
 #include <frc/XboxController.h>
+
+#include "TankDrive.h"
 /*
 #include <frc/Compressor.h>
 #include <frc/Solenoid.h>
@@ -39,6 +41,7 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
   
+  TankDrive drive;
   //frc::Solenoid bob = frc::Solenoid(5, frc::PneumaticsModuleType::CTREPCM, 7);
   //frc::Compressor comp = frc::Compressor(6, frc::PneumaticsModuleType::CTREPCM);
   // rev::CANSparkMax mL = rev::CANSparkMax(0, rev::CANSparkMaxLowLevel::MotorType::kBrushless); // motor lefty
