@@ -2,26 +2,26 @@
 //deadzone
 
 
-void Elevator::ElevatorOperation() {
-  if (elpilot.GetLeftBumper())
+void Elevator::ElevatorOperation(double controllerSpeed, bool slowMode) {
+  if (slowMode)
   {
-      if (elpilot.GetLeftY() > deadzone)
+      if (controllerSpeed > m_deadzone)
     {
-      ElevatorMotor.Set((-(elpilot.GetLeftY()) + deadzone) / (1 - deadzone) * 0.2);
+      m_elevatorMotor.Set((-(controllerSpeed) + m_deadzone) / (1 - m_deadzone) * m_multplier);
     }
-    else if(elpilot.GetLeftY() < deadzone) {
-      ElevatorMotor.Set((elpilot.GetLeftY() - deadzone)/(1 - deadzone) * 0.2);
+    else if(controllerSpeed < m_deadzone) {
+      m_elevatorMotor.Set((controllerSpeed - m_deadzone)/(1 - m_deadzone) * m_multplier);
     }
   }
   else
   {
-    if (elpilot.GetLeftY() > deadzone)
+    if (controllerSpeed > m_deadzone)
     {
-      ElevatorMotor.Set((-(elpilot.GetLeftY()) + deadzone) / (1 - deadzone));
+      m_elevatorMotor.Set((-(controllerSpeed) + m_deadzone) / (1 - m_deadzone));
     }
-    else if(elpilot.GetLeftY() < deadzone) 
+    else if(controllerSpeed < m_deadzone) 
     {
-      ElevatorMotor.Set((elpilot.GetLeftY() - deadzone)/(1 - deadzone));
+      m_elevatorMotor.Set((controllerSpeed - m_deadzone)/(1 - m_deadzone));
     }
   }
 }

@@ -3,7 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "Robot.h"
-#include "Elevator.h"
 #include <fmt/core.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <rev/CANSparkMax.h>
@@ -11,9 +10,6 @@ void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
-  frc::XboxController pilot1{1};
-  Elevator elevator(pilot1);
-
 }
 // Elevator object initialization 
   
@@ -63,7 +59,7 @@ void Robot::TeleopInit() {
 
 }
 void Robot::TeleopPeriodic() {
-  elevator.ElevatorOperation();
+  m_elevator.ElevatorOperation(m_pilot1.GetLeftY(), m_pilot1.GetLeftBumper());
 }
 
 void Robot::DisabledInit() {}

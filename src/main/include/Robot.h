@@ -9,6 +9,7 @@
 #include <frc/smartdashboard/SendableChooser.h>
 #include <rev/CANSparkMax.h>
 #include <frc/XboxController.h>
+#include "Elevator.h"
 
 
 class Robot : public frc::TimedRobot {
@@ -31,4 +32,6 @@ class Robot : public frc::TimedRobot {
   const std::string kAutoNameDefault = "Default";
   const std::string kAutoNameCustom = "My Auto";
   std::string m_autoSelected;
+  frc::XboxController m_pilot1{1};
+  Elevator m_elevator;
 };
