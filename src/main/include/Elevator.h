@@ -5,10 +5,9 @@
 
 class Elevator{
     public:
-        Elevator();
         void ElevatorOperation(double controllerSpeed, bool slowMode);
     private:
         rev::CANSparkMax m_elevatorMotor = rev::CANSparkMax(2, rev::CANSparkMaxLowLevel::MotorType::kBrushless); 
-        int m_deadzone = 0.3;
+        int m_deadzone = 0.0;
         double m_multplier = 0.2;
 };
